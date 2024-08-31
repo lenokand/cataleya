@@ -21,20 +21,22 @@ const swiper = new Swiper('.swiper', {
 
 let menu = document.querySelector(".menu")
 
+if(window.width > 1336){
 
+  
+  window.addEventListener('scroll',function(){
 
-window.addEventListener('scroll',function(){
-
-  if( window.pageYOffset >= 150 && window.screen.width >= 1200){
+    if( window.pageYOffset >= 150 && window.screen.width >= 1200){
     
-    menu.classList.add('stiky')
-
-  }
-  else{
-    menu.classList.remove('stiky')
-    
-  }
-})
+      menu.classList.add('stiky')
+      
+    }
+    else{
+      menu.classList.remove('stiky')
+      
+    }
+  })
+}
 // плавный переход по якорям
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -100,5 +102,21 @@ document.querySelectorAll('.accordion-header').forEach(header => {
         content.classList.add('open');
         header.classList.add('active');
       }
+  });
+});
+
+
+// бургер меню
+
+const icons = document.querySelectorAll('.burger');
+const menuTag = document.querySelector('menu');
+const body = document.querySelector('body');
+icons.forEach (icon => {  
+  icon.addEventListener('click', (event) => {
+    icon.classList.toggle("open");
+    menuTag.classList.toggle("open");
+    
+    body.classList.toggle("open");
+
   });
 });
