@@ -225,11 +225,11 @@ main{
 .blocks{
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 15px;
     a{
         display: flex;
         overflow: hidden;
-        width: calc(50% - 5px);
+        width: calc(50% - 15px);
         height: 300px;
         /* border-radius: 15px; */
         position: relative;
@@ -256,10 +256,11 @@ main{
     }
     .service-name{
         position: absolute;
-        bottom: 10px;
-        left: 10px;
+        bottom: 15px;
+        left: 30px;
         color: #fff;
-        font-size: 22px;
+        text-shadow: 0 0 3px #000;
+        font-size: 36px;
         font-weight: 500;
         z-index: 1;
     }
@@ -585,6 +586,9 @@ color: #878787;
   }
 
 }
+.footer-copyright{
+  margin-top: 45px;
+}
 .menu-col-title{
   color: #414141;
   margin-bottom: 15px;
@@ -628,7 +632,39 @@ color: #878787;
 
 
 
+ .about-text{
+  padding: 30px;
+  background-image: 
+  linear-gradient(#d87c8a 10vw, transparent ),
+   linear-gradient(90deg, #d87c8a 10vw, transparent ), 
+  linear-gradient(transparent,  #d87c8a 10vw), 
+  linear-gradient(90deg,  transparent , #d87c8a 10vw);
+  background-size: 2px 20vw, 20vw 2px, 2px 20vw, 20vw 2px;
+  background-position: 0 0, 0 0, 100% 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; 
+  position: relative;
+ }
+ .about-text::after{
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+  padding: 20px;
+  background-image: 
+  
+  linear-gradient( #d87c8a 10vw, transparent ),
+   linear-gradient(90deg,  #d87c8a 10vw, transparent ), 
 
+
+  linear-gradient( transparent , #d87c8a 10vw), 
+  linear-gradient(90deg, transparent , #d87c8a 10vw);
+
+  background-size: 2px 15vw, 15vw 2px, 2px 15vw, 15vw 2px;
+  background-position: 0 0, 0 0, 100% 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; 
+ }
 
 
 
@@ -637,4 +673,16 @@ color: #878787;
     .parallax {
       background-attachment: scroll;
     }
+    .container {
+      max-width: 900px;
+    }
+    .about-block{
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width:1024px) {
+    .container {
+      max-width: 90%;
+    }
+    
   }
