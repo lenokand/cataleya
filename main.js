@@ -17,11 +17,14 @@ const swiper = new Swiper('.swiper', {
       prevEl: ".swiper-button-prev",
     },
   });
+
+
 // фиксированное меню
 
-let menu = document.querySelector(".menu")
-
-if(window.width > 1336){
+let menu = document.querySelector(".menu.nav")
+console.log(menu)
+console.log(window.screen.width)
+if(window.innerWidth > 1336){
 
   
   window.addEventListener('scroll',function(){
@@ -38,16 +41,39 @@ if(window.width > 1336){
   })
 }
 // плавный переход по якорям
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//     anchor.addEventListener('click', function(e) {
+//       e.preventDefault();
   
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
+//       document.querySelector(this.getAttribute('href')).scrollIntoView({
+//         behavior: 'smooth'
+//       });
+//     });
+//   });
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
 
+    // Get the target element ID from the href attribute
+    const targetId = this.getAttribute('href');
+
+    // Ensure that the targetId is not just '#'
+    if (targetId !== '#') {
+      // Check if an element with the given ID exists on the page
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) { // Only scroll if the element exists
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      } else {
+        console.warn(`Element with ID ${targetId} not found.`);
+      }
+    } else {
+      console.warn('Empty target selector "#" detected.');
+    }
+  });
+});
 
 
 

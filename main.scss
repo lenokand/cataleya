@@ -27,8 +27,8 @@ menu > ul.stiky{
         display: none;
     }
     .nav-link{
-        padding: 5px;
-        font-size: 16px;
+      padding: 15px 10px;
+      font-size: 16px;
     }
     position: fixed;
     top: 0px;
@@ -44,6 +44,9 @@ menu > ul.stiky{
     
 }
 
+menu .logo .nav-link{
+  width: 200px;
+}
 menu .nav-link{
     font-size: 18px;
     margin: 5px;
@@ -54,6 +57,12 @@ menu .nav-link{
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
     transition: 300ms ease;
+
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
 }
 menu .nav-link:hover, 
 menu .nav-link.active{
@@ -634,6 +643,7 @@ color: #878787;
         bottom: 30px;
         right: 30px;
         cursor: pointer;
+        z-index: 2;
         svg{
             transform: rotate(180deg);
             margin-bottom: 10px;            /* width: 30px; */
@@ -805,13 +815,17 @@ color: #878787;
    padding-top: 10%;
    padding-bottom: 10%;
    transition: 300ms ease;
-
-
+  }
+  menu .nav-link{
+    border-top: none;
   }
   }
 
 
   @media screen and (max-width:1024px) {
+    .parallax{
+      background-position-x: 92%;
+    }
     .container {
       max-width: 90%;
     }
@@ -824,6 +838,7 @@ color: #878787;
     }
     .contacts .block-map{
       margin-top: 45px;
+      height: 350px;
     }
     footer .footer-menu{
       flex-direction: column;
@@ -834,6 +849,15 @@ color: #878787;
     .blocks a{
       width: 100%;
     }
+    footer .btn-round{
+      right: 20px;
+      bottom: 20px;
+      margin-bottom: 0;
+    }
+    .accordion-content.open{
+      padding: 30px;
+    }
+
   }
 
 
