@@ -22,8 +22,6 @@ const swiper = new Swiper('.swiper', {
 // фиксированное меню
 
 let menu = document.querySelector(".menu.nav")
-console.log(menu)
-console.log(window.screen.width)
 if(window.innerWidth > 1336){
 
   

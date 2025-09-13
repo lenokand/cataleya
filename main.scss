@@ -613,6 +613,7 @@ color: #878787;
   /* service page */
  main.service_page{
     min-height: 350px;
+    background-color: #4d4d4d;
  }
  .service_page .parallax {
     min-height: auto;
@@ -762,8 +763,74 @@ color: #878787;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; 
  }
 
+/* nails */
 
+.service.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
 
+.service.gallery a {
+  width: 220px;   /* fixed width */
+  height: 160px;  /* fixed height */
+  flex: 0 0 auto; /* prevent stretching */
+  overflow: hidden;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.service.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* crop image */
+  object-position: center; /* center focus */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.service.gallery img:hover {
+  transform: scale(1.05); /* zoom hover */
+}
+
+.price{
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+.price-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.appointment{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+  margin-bottom: 90px;
+}
+.btn-appointment {
+  font-size: 18px;
+  display: block;
+  padding: 12px 24px;
+  background-color: #d63384;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  text-align: center;
+  margin-top: 20px;
+}
+.btn-appointment:hover {
+  background-color: #b0286f;
+}
 
  @media only screen and (max-device-width: 1366px) {
     .parallax {
@@ -857,8 +924,42 @@ color: #878787;
     .accordion-content.open{
       padding: 30px;
     }
-
+    
+    .service.gallery a {
+      width: 45%;
+     
+    }
+    main.service_page{
+      min-height: unset;
+      
+    }
+    menu{
+      width: 100%;
+    }
+    .hidden-header .logo{
+      width: 50px;
+    }
+    .hidden-header{
+      padding-bottom: 15px;
+    }
+    .burger{
+      top: 25px;
+    }
+    .title{
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .service.gallery{
+      padding-top: 0;
+    }
   }
+
+@media screen and (max-width: 480px) {
+  .service.gallery a {
+    /* flex: 1 1 48%; */
+    height: 140px;
+  }
+}
 
 
 
