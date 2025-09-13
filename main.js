@@ -135,6 +135,7 @@ document.querySelectorAll('.accordion-header').forEach(header => {
 const icons = document.querySelectorAll('.burger');
 const menuTag = document.querySelector('menu');
 const body = document.querySelector('body');
+console.log(icons, menuTag,  body, 'ddddd')
 icons.forEach (icon => {  
   icon.addEventListener('click', (event) => {
     icon.classList.toggle("open");
